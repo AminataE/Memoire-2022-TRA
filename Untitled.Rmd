@@ -1,0 +1,61 @@
+---
+title: "Faut-il croire au réchauffement climatique?"
+author: 
+- "Aminata Ndiaye"
+- "Raphaël Malak"
+- "Faniriana Rakoto-Endor"
+
+
+output:
+  pdf_document: default
+  html_document: default
+---
+## Introduction
+Le réchauffement climatique est un phénomène dont les premiers écrits  datent du 20 iéme siècle. Les sommets internationnaux sur le climat se sont multipliés ces dernières décennies, sans qu'aucune réelle décision ne soit prise. De plus nombreux sont ceux qui restent sceptiques quant à l'existence du dérèglement climatique.
+L'objectif de notre mémoire est de modéliser l'évolution des températures au cours du temps long et à mettre en évidence, s'ils existent, des changements dans la distribution et des ruptures.
+
+Dans notre approche, nous choissisons de recourir à des méthodes de prédiction exactes.
+
+
+
+## Cadre mathématique et notations
+Dans ce mémoire nous allons étudier l'une des séries temporelles les plus longues et les plus anciennes. Il s'agit d'une série de températures enregistrées dans la partie centrale de l'Angleterre de 1659 à aujourd'hui.
+Dans un premier temps, nous allons considérer que chaque observation de notre série est solution d'une équation AM(1) . Soit $Z_t \sim \mathcal{N}(0,\sigma^2)$:
+
+$$y_t=\mu_t + Z_t$$
+## Point de rupture
+Notre objectif et de déterminer les points de rupture de la série. Un point de rupture est un moment où les propriétés statistiques de la série que l'on observe changent.
+Soit une séquence ordonnée de données $y_{1:n}=(y_1,...,y_n)$, on dit q'il y a point de rupture dans la serie s'il existe $$\tau \in \lbrace  1,...,n-1 \rbrace $$ tel que les propriétés statistiques de $(y_1,...,y_{\tau})$ et $(y_{\tau+1},...,y_n)$ soient différentes.
+
+
+Dans le cas de points de rupture multiples, soit $$m \in  \lbrace  1,...,n-1 \rbrace $$ le nombre de points de rupture et $\tau_{1:m}=(y_1,...,y_m)$. Chaque point de rupture est un entier entre $1$ et $n-1$ inclus. On définit $\tau_0=0$ et $\tau_{m+1}=n$, on suppose que les points de rupture sont ordonnés tel que $\tau _i<\tau_j$ si et seulement si $i<j$.
+Ainsi les $m$ points de ruptures divisent le jeu de données en $m+1$ segments, le ième segement correspondant à $$ y_{(\tau_{i-1}+1) : \tau_i}=(y_{\tau_{i-1}+1},...,y_{\tau_i})$$.
+
+## Méthode de détection de points de rupture
+Définissons tout d'abord la méthode de la vraisemblance pénalisée. L'idée est de minimiser la méthode de la vraisemblance pénalisée.
+## Méthode par variation de moyenne
+## Méthode par variation de la pente
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
